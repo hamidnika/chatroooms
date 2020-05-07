@@ -1,0 +1,41 @@
+{
+  "homepage": "https://hamidnika.github.io/chatroooms",
+  "name": "chattroooms",
+  "version": "2.0.0",
+  "description": "chat",
+  "engines": {
+    "node": "10.16.x",
+    "npm": "6.x"
+  },
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"nodemon server/index.js\" \"npm run client\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "hamid nikoo",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "gh-pages": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.2",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.4",
+    "react-dropzone": "^10.2.1",
+    "sendemail": "^4.0.0",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.4"
+  }
+}
